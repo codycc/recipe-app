@@ -4,6 +4,5 @@ export class Recipe {
         public type: string,
         public cook_time: number,
         public ingredients: string[]
-
     ) {}
 }

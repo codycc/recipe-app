@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var recipe_1 = require('./model/recipe');
 var http_1 = require('@angular/http');
-var recipe_service_1 = require('./service/recipe.service');
+require('rxjs/add/operator/catch');
+require('rxjs/add/operator/map');
 var AppComponent = (function () {
     function AppComponent(http) {
         this.http = http;
@@ -35,13 +36,16 @@ var AppComponent = (function () {
             }
         });
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], AppComponent.prototype, "status", void 0);
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css'],
-            providers: [recipe_service_1.RecipeService]
+            styleUrls: ['app.component.css']
         }), 
         __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);

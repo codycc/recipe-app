@@ -7,49 +7,48 @@
 <body>
 
     <div class="container">
-    <div class="row">
-        <h1 style="color:white;">Recipes!</h1>
+    <div id="main-title" class="row">
+        <h1>Recipe Selector</h1>
     </div>
     <br>
+
     <div class="row">
+
         <div class="col-md-4 recipe-filters">
             <div class="card">
-                <h1>hello</h1>
-               
+               <ingredient-selector (select)="ingredient = $event"></ingredient-selector>
             </div>
-            
         </div>
 
     <div class="col-md-8 results-listing">
-        
-    <!--<app-card *ngFor="let recipe of recipes">{{recipe.name}}</app-card>-->
-     <div class="card" *ngFor="let recipe of recipesArray">
+        <div id="titles">
+            <h1>Results</h1>
+            <h5>CookTime</h5>
+            <br>
+            <br>
+        </div>
+
+     <div class="card" *ngFor="let recipe of recipesArray | ingredientfilter:ingredient">
         <div class="card-block">
             <div class="row">
                 <div class="col-xs-10">
-                    <p>Name: {{recipe.name}}</p>
-                    <p>Type: {{recipe.type}}</p>
+                    <h3>{{recipe.name}}</h3>
+                    <h5>Type: {{recipe.type}}</h5>
+                         <p> Ingredients: {{recipe.ingredients.join(', ')}}</p>   
                 </div>
+
                 <div class="col-xs-2">
-                    <h1>{{recipe.cook_time}}</h1>
-                   
+                    <h1>{{recipe.cook_time}}</h1>min
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <p> Ingredients: {{recipe.ingredients}}</p>
-                   
-                </div>
-                
-            </div>
-         
         </div>
+
      </div>
 
     </div>
    
     </div>
-</div>
+    </div>
     
 </body>
 </html>
