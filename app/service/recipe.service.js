@@ -9,22 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
-var card_component_1 = require('./card/card.component');
-var AppModule = (function () {
-    function AppModule() {
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/operator/catch');
+require('rxjs/add/operator/map');
+var RecipeService = (function () {
+    function RecipeService(http) {
+        this.http = http;
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.JsonpModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, card_component_1.CardComponent],
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    RecipeService.prototype.getRecipeData = function () {
+        this.http.get('./app/recipes.json')
+            .map(function (res) { return res.json(); })
+            .catch(function (err) {
+            console.error("Unabale to get weather data - ", err);
+            return Observable_1.Observable.throw(err.json());
+        });
+    };
+    RecipeService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], RecipeService);
+    return RecipeService;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.RecipeService = RecipeService;
+//# sourceMappingURL=recipe.service.js.map

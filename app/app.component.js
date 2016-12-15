@@ -9,15 +9,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var recipe_1 = require('./model/recipe');
+var http_1 = require('@angular/http');
+var recipe_service_1 = require('./service/recipe.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(http) {
+        this.http = http;
+        this.recipesArray = [];
     }
+    ;
+    AppComponent.prototype.ngOnInit = function () {
+        this.getRecipes();
+    };
+    AppComponent.prototype.getRecipes = function () {
+        var _this = this;
+        this.http.get('./app/recipes.json')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (recipes) {
+            for (var i = 0; i < recipes.length; i++) {
+                var recipe = recipes[i];
+                console.log(recipe);
+                var newRecipe = new recipe_1.Recipe(recipe["name"], recipe["type"], recipe["cook_time"], recipe["ingredients"]);
+                _this.recipesArray.push(newRecipe);
+                console.log("here is recipe", newRecipe);
+            }
+        });
+    };
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            template: '<h1>Skeleton Project</h1>'
+            templateUrl: 'app.component.html',
+            styleUrls: ['app.component.css'],
+            providers: [recipe_service_1.RecipeService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);
     return AppComponent;
 }());

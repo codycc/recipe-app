@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+    <div class="row">
+        <h1 style="color:white;">Recipes!</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4 recipe-filters">
+            <div class="card">
+                <h1>hello</h1>
+               
+            </div>
+            
+        </div>
+
+    <div class="col-md-8 results-listing">
+        
+    <!--<app-card *ngFor="let recipe of recipes">{{recipe.name}}</app-card>-->
+     <div class="card" *ngFor="let recipe of recipesArray">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-xs-10">
+                    <p>Name: {{recipe.name}}</p>
+                    <p>Type: {{recipe.type}}</p>
+                </div>
+                <div class="col-xs-2">
+                    <h1>{{recipe.cook_time}}</h1>
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p> Ingredients: {{recipe.ingredients}}</p>
+                   
+                </div>
+                
+            </div>
+         
+        </div>
+     </div>
+
+    </div>
+   
+    </div>
+</div>
+    
+</body>
+</html>
+
+
