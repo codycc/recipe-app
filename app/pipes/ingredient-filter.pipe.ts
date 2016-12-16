@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class IngredientFilter implements PipeTransform {
+    // will take ingredient as an argument, iterate through recipe.ingredients and return the recipes where they match
     transform(value, args?){
          let ingredient = args;
         if (value==null) {

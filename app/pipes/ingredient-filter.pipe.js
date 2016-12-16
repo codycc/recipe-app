@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var IngredientFilter = (function () {
     function IngredientFilter() {
     }
+    // will take ingredient as an argument, iterate through recipe.ingredients and return the recipes where they match
     IngredientFilter.prototype.transform = function (value, args) {
         var ingredient = args;
         if (value == null) {
