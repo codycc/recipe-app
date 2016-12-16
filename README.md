@@ -9,10 +9,10 @@ Using the provided JSON data representing a collection of meal recipes, create a
 2.cd into directory 
 
 ###To Install:###
-npm install
+`npm install`
 
 ###To Start:###
-npm start 
+`npm start `
 
 ### Visit localhost:3000  to view app ### 
 
