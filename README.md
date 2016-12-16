@@ -1,5 +1,5 @@
 # Recipe app #
-Evercise for deepend group, using my Angular2 skeleton.
+Exercise for deepend group, using my Angular2 skeleton.
 Using the provided JSON data representing a collection of meal recipes, create a responsive frontend application.
  
 ### Installation Instructions ###
@@ -14,5 +14,5 @@ Using the provided JSON data representing a collection of meal recipes, create a
 ###To Start:###
 `npm start `
 
-### Visit localhost:3000  to view app ### 
+### Visit localhost:3000 to view app ### 
 
