@@ -14,5 +14,5 @@ Using the provided JSON data representing a collection of meal recipes, create a
 ###To Start:###
 `npm start `
 
-### Visit localhost:3000 to view app ### 
+### Visit localhost:3000 to view app 
 
