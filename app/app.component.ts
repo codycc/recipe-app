@@ -31,10 +31,8 @@ export class AppComponent {
             // for every recipe create a new recipe instance from the recipe Model imported above, then push instance into the array above
              for (var i = 0; i < recipes.length; i++) {
                 let recipe = recipes[i]
-                console.log(recipe)
                 let newRecipe = new Recipe(recipe["name"],recipe["type"],recipe["cook_time"],recipe["ingredients"]);
                 this.recipesArray.push(newRecipe);
-                console.log("here is recipe",newRecipe)
             }
           });
     }
