@@ -14,17 +14,21 @@ import 'rxjs/add/operator/map';
 })
 
 export class AppComponent { 
-    @Input() status;
+    @Input() ingredient;
+    // create instance of Http for request
    constructor(private http: Http) {};
+    // array where recipes will be appended to when parsing JSON, array is used in html template to display recipes results
    recipesArray : Recipe[] = [];
-
+   // Grab recipes from JSON file on initialization
     ngOnInit() {
        this.getRecipes(); 
     }
+    // http call to JSON file
     getRecipes() {
         this.http.get('./app/recipes.json')
         .map(res => res.json())
         .subscribe(recipes => {
+            // for every recipe create a new recipe instance from the recipe Model imported above, then push instance into the array above
              for (var i = 0; i < recipes.length; i++) {
                 let recipe = recipes[i]
                 console.log(recipe)
@@ -32,6 +36,6 @@ export class AppComponent {
                 this.recipesArray.push(newRecipe);
                 console.log("here is recipe",newRecipe)
             }
-          })
+          });
     }
 }

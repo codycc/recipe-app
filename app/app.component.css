@@ -8,32 +8,30 @@ body, html {
   height: 100vh; }
   body .container, html .container {
     padding-top: 2rem; }
-
-#main-title {
-  font-weight: lighter;
-  letter-spacing: 2px; }
-
-.results-listing {
-  height: 500px;
-  background-color: #ECEBEB;
-  overflow: scroll;
-  padding: 10px;
-  -webkit-box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.34);
-  -moz-box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.34);
-  box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.34); }
-  .results-listing #titles h1 {
-    float: left; }
-  .results-listing #titles h5 {
-    float: right;
-    padding-top: .8rem;
-    padding-right: 2rem;
-    font-weight: lighter; }
-  .results-listing .card {
-    opacity: 1;
-    animation: fade 2s linear;
-    -o-animation: fade 2s linear;
-    -moz-animation: fade 2s linear;
-    -webkit-animation: fade 2s linear; }
+    body .container #main-title, html .container #main-title {
+      font-weight: lighter;
+      letter-spacing: 2px; }
+    body .container .results-listing, html .container .results-listing {
+      height: 500px;
+      background-color: #ECEBEB;
+      overflow: scroll;
+      padding: 10px;
+      -webkit-box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.34);
+      -moz-box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.34);
+      box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.34); }
+      body .container .results-listing #titles h1, html .container .results-listing #titles h1 {
+        float: left; }
+      body .container .results-listing #titles h5, html .container .results-listing #titles h5 {
+        float: right;
+        padding-top: .8rem;
+        padding-right: 2rem;
+        font-weight: lighter; }
+      body .container .results-listing .card, html .container .results-listing .card {
+        opacity: 1;
+        animation: fade 2s linear;
+        -o-animation: fade 2s linear;
+        -moz-animation: fade 2s linear;
+        -webkit-animation: fade 2s linear; }
 
 @keyframes fade {
   0% {
@@ -64,8 +62,7 @@ body, html {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
-.card-block {
-  background-color: #F9F9F9; }
-  .card-block h1 {
-    color: #52B6B5; }
+    body .container .card-block, html .container .card-block {
+      background-color: #F9F9F9; }
+      body .container .card-block h1, html .container .card-block h1 {
+        color: #52B6B5; }

@@ -25,7 +25,7 @@ var IngredientSelector = (function () {
     IngredientSelector = __decorate([
         core_1.Component({
             selector: 'ingredient-selector',
-            template: "\n    <select class=\"form-control\" (change)=\"select.emit($event.target.value)\">\n        <option>Select Ingredients</option>\n        <option *ngFor=\" let ingredient of ingredients\">\n        {{ingredient}}\n        </option>\n    </select>\n    "
+            template: "\n    <select class=\"form-control\" (change)=\"select.emit($event.target.value)\">\n        <option>Select Ingredients</option>\n            <option *ngFor=\" let ingredient of ingredients\">\n                {{ingredient}}\n            </option>\n    </select>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], IngredientSelector);

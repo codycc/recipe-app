@@ -9,7 +9,6 @@ export class IngredientFilter implements PipeTransform {
     transform(value, args?){
          let ingredient = args;
         if (value==null) {
-
         } else {
          return value.filter(recipe => {
              console.log("here is recipe name",recipe.name)

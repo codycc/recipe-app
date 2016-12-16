@@ -5,9 +5,9 @@ import { Component, Output, EventEmitter } from "@angular/core";
     template: `
     <select class="form-control" (change)="select.emit($event.target.value)">
         <option>Select Ingredients</option>
-        <option *ngFor=" let ingredient of ingredients">
-        {{ingredient}}
-        </option>
+            <option *ngFor=" let ingredient of ingredients">
+                {{ingredient}}
+            </option>
     </select>
     `
 })
